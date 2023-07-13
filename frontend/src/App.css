@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  height: 450px;
+  overflow-y: hidden;
+  margin-top: 20px;
+  background: linear-gradient(90deg, rgb(176, 227, 226) 0%, rgb(33, 172, 210) 100%);
+}
+
+
+.todo-app {
+  height: 700px;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 700px;
+  background: #ecc561;
+  text-align: center;
+  margin: 12px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 32px 0;
+  color: #b81818;
+  font-size: 22px;
+}
+
+.tab-buttons {
+  margin-top: 0px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.tab-buttons button {
+  padding: 5px 15px;
+  font-size: 16px;
+  background-color: #7ae143;
+  color: #27079c;
+  text-decoration: solid;
+  font-weight: 800;
+  border: none;
+  border-radius: 4px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-buttons button.active {
+  background-color: #3aa22a;
+}
+
+.todo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.todo-section h2 {
+  text-align: center;
+  font-size: large ;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.todo-row {
+  width: 150%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.completed-todo-row {
+  width: 150%;
+  max-width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  /* i want to add a scrollbar */
+  scrollbar-width: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+  opacity: 0.4;
+}
+
+.completed-todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  opacity: 0.8;
+}
+
+.todo-buttons,
+.completed-todo-buttons {
+  flex-shrink: 0; 
+  margin-left: auto; 
+}
+
+.todo-buttons svg,
+.completed-todo-buttons svg {
+  cursor:grab;
+  margin-left: 5px;
+}
+
+ .todo-form {
+  margin-bottom: 32px;
+} 
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+}
+
+.todo-input::placeholder {
+  color: #e2e2e2;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.todo-button-edit {
+  font-weight: bold;
+  font-size: medium;
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: grab;
+  outline: none;
+  background: linear-gradient(90deg, rgb(219, 12, 255) 0%, rgb(125, 14, 125) 100%);
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-button {
+  font-weight: bold;
+  font-size: medium;
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: grab;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-input.edit {
+  border: 2px solid #149fff;
+}
+
+.todo-button.edit {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+  padding: 16px 22px;
+}
+
+.completed-tick{
+  color: #3aa22a;
+  margin-right: 10px;
+  font-weight: 900;
+  margin-left: -120px;
+}
+
+.todo-row,
+.completed-todo-row {
+  width: 400px; 
+  min-height: 80px; 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+
+.todo-row .todo-text,
+.completed-todo-row .todo-text {
+  flex: 1;
+  word-break: break-word;
+  width: 100px; 
+}
+
+.completed-todo-row .todo-text {
+  margin-left: 50px; /* Create space for the tick symbol */
+}
+
+.todo-row:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
+.todo-row:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 12, 241, 1) 0%,
+    rgba(250, 0, 135, 1) 100%
+  );
+}
+
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+.delete-icon {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.edit-icon {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.restore-icon {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
